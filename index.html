@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Shopping Time</title>
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    #search-button {
+      width: 100px;
+      height: 50px;
+    }
+
+    #search-button svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      background: white;
+      cursor: pointer;
+      border-radius: 2%;
+    }
+
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border-top: none;
+    }
+
+    button:hover {
+      background-color: lightgrey;
+
+      svg {
+        fill: #428BFF;
+      }
+    }
+
+    /* Create an active/current tablink class */
+    button.active {
+      background-color: lightgrey;
+
+      svg {
+        fill: #428BFF;
+      }
+    }
+
+
+    h2 {
+      color: #428BFF;
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 300;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <div class="tab">
+    <button class="tablinks" onclick="shopping(event, 'Features')" id="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M144 80c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z" />
+      </svg>
+    </button>
+    <button class="tablinks" onclick="shopping(event, 'Payment Options')" id="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M168 336C181.3 336 192 346.7 192 360C192 373.3 181.3 384 168 384H120C106.7 384 96 373.3 96 360C96 346.7 106.7 336 120 336H168zM360 336C373.3 336 384 346.7 384 360C384 373.3 373.3 384 360 384H248C234.7 384 224 373.3 224 360C224 346.7 234.7 336 248 336H360zM512 32C547.3 32 576 60.65 576 96V416C576 451.3 547.3 480 512 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H512zM512 80H64C55.16 80 48 87.16 48 96V128H528V96C528 87.16 520.8 80 512 80zM528 224H48V416C48 424.8 55.16 432 64 432H512C520.8 432 528 424.8 528 416V224z" />
+      </svg>
+    </button>
+    <button class="tablinks" onclick="shopping(event, 'Delivery')" id="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM208 416c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zm272 48c-26.5 0-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48s-21.5 48-48 48z" />
+      </svg>
+    </button>
+    <button class="tablinks" onclick="shopping(event, 'Easy Returns')" id="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M32 96l320 0V32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l96 96c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-96 96c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6V160L32 160c-17.7 0-32-14.3-32-32s14.3-32 32-32zM480 352c17.7 0 32 14.3 32 32s-14.3 32-32 32H160v64c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-96-96c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6l96-96c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 64H480z" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="Features" class="tabcontent">
+    <h2>Features</h2>
+    <p>Lorem ipsum dolor sit amet. Qui autem ipsa qui exercitationem commodi cum minima voluptatem ad sunt adipisci qui omnis placeat est quas omnis quo internos molestiae. Est reprehenderit quis est quia iure et repellendus porro. Cum nulla laborum
+      ut voluptatem recusandae nam odit sunt At eligendi illum aut praesentium suscipit. Rem suscipit quaerat ea sequi accusantium eum mollitia expedita ut dolorem ducimus et galisum doloremque et voluptatem dolorem. Sit optio voluptas eum aliquam
+      nesciunt.</p>
+  </div>
+
+  <div id="Payment Options" class="tabcontent">
+    <h2>Payment Options</h2>
+    <p>Sit nihil neque et harum veniam aut temporibus modi sed exercitationem inventore sed itaque tempora rem laudantium quas ad fugit incidunt. Vel internos autem sit quis quia qui reiciendis voluptatem sed saepe harum non unde perferendis et
+      maxime possimus. A sunt voluptas ex amet harum quo similique fugiat sed veritatis voluptates qui omnis internos ad facere omnis.</p>
+  </div>
+
+  <div id="Delivery" class="tabcontent">
+    <h2>Delivery</h2>
+    <p>Et velit omnis ea consectetur itaque ut iusto doloremque ut officiis praesentium. Aut odio vitae ea praesentium assumenda et molestiae quos sit repellendus doloremque ut suscipit explicabo eum impedit officiis est sapiente omnis. A omnis
+      voluptatem et officia doloribus eum totam nemo aut tempore Quis. Ad ducimus expedita est aspernatur vitae est necessitatibus sint.</p>
+  </div>
+  <div id="Easy Returns" class="tabcontent">
+    <h2>Easy Returns</h2>
+    <p>Est totam est sunt minima quo veniam nisi! Odit incidunt 33 consequuntur maxime aut explicabo maxime nam fugiat quas ea voluptatem consequatur. Ab harum tempore sit vero rerum ad repellat quas est aliquam natus ut provident dolorum eos beatae
+      quibusdam sint voluptatem! Qui ducimus omnis hic consequuntur suscipit nesciunt fuga a molestiae alias! Sit aperiam quos vel quasi nostrum omnis autem. Eos inventore temporibus vel facilis nesciunt ea quos molestias sed recusandae accusantium
+      ut quos deleniti.</p>
+  </div>
+  <script type="text/javascript">
+    function shopping(evt, stage) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(stage).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</body>
+
+</html>
